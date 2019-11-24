@@ -18,13 +18,13 @@ public class Home {
     public Home(){
         addSeccion("Cocina",0,0);
         addSeccion("Cuarto",15,15);
-        addSeccion("Banio",30,30);
+        addSeccion("Banio",500,500);
         addSeccion("Comedor",50,50);
         addSeccion("Huerto",100,100);
         addSeccion("Bodega",200,200);
         addSeccion("ZonaEjercicios",300,300);
         addSeccion("ZonaPelea",400,400);
-        addSeccion("Jardin",500,500);
+        addSeccion("Jardin",30,30);
     }
 
     public HashMap<String, Vector2> getSecciones() {

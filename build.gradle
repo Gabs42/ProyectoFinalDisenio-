@@ -33,6 +33,11 @@ task dist(type: Jar) {
     }
     with jar
 }
+dependencies {
+        compile fileTree(dir: 'libs', include: '*.jar')
+
+        
+}
 
 
 dist.dependsOn classes

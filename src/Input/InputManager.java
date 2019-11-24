@@ -44,8 +44,6 @@ public class InputManager implements InputProcessor {
                                 
                             }
                         }
-                        System.out.println(screenX);
-                        System.out.println(screenY);
                         return true;
                     }
                     return true;
