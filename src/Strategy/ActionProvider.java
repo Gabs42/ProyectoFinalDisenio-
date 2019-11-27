@@ -21,13 +21,29 @@ public class ActionProvider {
         PeeStrategy pee = new PeeStrategy();
         PooStrategy poo = new PooStrategy();
         SleepStrategy sleep = new SleepStrategy();
+        EatStrategy eat = new EatStrategy();
+        CollectStrategy collect = new CollectStrategy();
+        SicknessStrategy sick = new SicknessStrategy();
+        CureStrategy cure = new CureStrategy();
+        ExcerciseStrategy exc = new ExcerciseStrategy();
+        MeditateStrategy meditate= new MeditateStrategy();
         strategies.put("Pee", pee);
         strategies.put("Poo", poo);
         strategies.put("Sleep",sleep);
+        strategies.put("Eat",eat);
+        strategies.put("Collect",collect);
+        strategies.put("Sick",sick);
+        strategies.put("Cure", cure);
+        strategies.put("Excercise",exc);
+        strategies.put("Meditate", meditate);
     }
     
     public void setAccion(String accion){
         this.actionStrategy = strategies.get(accion);
+    }
+    
+    public boolean executeAction(String accion,MainCharacter character){
+        return this.strategies.get(accion).action(character);
     }
     
     public boolean action(MainCharacter character){

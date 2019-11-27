@@ -16,9 +16,16 @@ public class SleepStrategy implements IActionStrategy{
     @Override
     public boolean action(MainCharacter character) {
         if(character.getTiredness() != 0){
+           character.setCurrentImage("gokuSleep.png");
            character.setTiredness(character.getTiredness()-1); 
+           if(character.getPhysycalHealth()!=100){
+            character.setPhysycalHealth(character.getPhysycalHealth()+1);
+            if(character.getPhysycalHealth()>100){
+                character.setPhysycalHealth(100);
+            }
+            }
            return true;
-        }
+        }      
         return false;
         
     }

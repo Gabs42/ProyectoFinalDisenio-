@@ -15,7 +15,7 @@ public class Reloj {
     private String horaActual = Integer.toString(hora)+":"+Integer.toString(minutos);
     private long avance;//cantidad de minutos de la vida real que tomara para que pase un dia en el juego
     private int diasAnio;
-    private int diasPasados = 0;
+    private int diasPasados = 1;
     private int anio = 1;
 
     public Reloj(long avance, int diasAnio) {
@@ -33,6 +33,15 @@ public class Reloj {
     public void setHora(int hora) {
         this.hora = hora;
     }
+
+    public int getMinutos() {
+        return minutos;
+    }
+
+    public void setMinutos(int minutos) {
+        this.minutos = minutos;
+    }
+    
 
     public long getAvance() {
         return avance;
@@ -61,6 +70,15 @@ public class Reloj {
     public String getHoraActual() {
         return horaActual;
     }
+
+    public int getDiasPasados() {
+        return diasPasados;
+    }
+
+    public void setDiasPasados(int diasPasados) {
+        this.diasPasados = diasPasados;
+    }
+    
     
     
     public void actualizar(){
@@ -69,11 +87,11 @@ public class Reloj {
             this.hora+=1;
             this.minutos = 00;
         }
-        if(this.hora == 24){
+        if(this.hora == 24&&this.minutos == 0){
             this.hora = 00;
             this.diasPasados += 1;
         }
-        if(diasPasados>=diasAnio){
+        if(diasPasados>diasAnio){
             this.anio +=1;
             diasPasados = 0;
         }

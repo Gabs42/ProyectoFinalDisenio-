@@ -6,6 +6,7 @@
 package Characters;
 import Character.Character;
 import Equipment.Equipment;
+import Facilities.Sickness;
 import Strategy.ActionProvider;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,19 +24,26 @@ public class MainCharacter extends Character{
     private int food;
     private int physycalHealth;
     private int mentalHealth;
+    private int energy;
+    private int gordura;
     private String currentAction = "";
     private ArrayList<Ability> currentAbilities = new ArrayList<>();
+    private ArrayList<Sickness> currentSickness = new ArrayList<>();
+    private String currentImage="";
     private int xPos = 100;
     private int yPos = 100;
     
     public MainCharacter(String name, String image, int hp, int dps, int level) {
         super(name,new ArrayList<String>(Arrays.asList(image)), null, hp, dps, level,0,0,0,null);
         this.age = 1;
-        this.tiredness = 50;
-        this.liquid = 0;
-        this.food = 0;
+        this.tiredness = 20;
+        this.liquid = 20;
+        this.food = 20;
         this.physycalHealth = 100;
         this.mentalHealth = 100;
+        this.energy = 100;
+        this.gordura = 0;
+        this.currentImage = this.getImages().get(0);
     }
 
     public int getAge() {
@@ -125,5 +133,46 @@ public class MainCharacter extends Character{
     public void setyPos(int yPos) {
         this.yPos = yPos;
     }
+
+    public int getEnergy() {
+        return energy;
+    }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
+    }
+
+    public int getGordura() {
+        return gordura;
+    }
+
+    public void setGordura(int gordura) {
+        this.gordura = gordura;
+    }
+
+    public ArrayList<Sickness> getCurrentSickness() {
+        return currentSickness;
+    }
+
+    public void setCurrentSickness(ArrayList<Sickness> currentSickness) {
+        this.currentSickness = currentSickness;
+    }
     
+    public void addSickness(Sickness s){
+        this.currentSickness.add(0,s);
+    }
+    public void removeSickness(Sickness s){
+        this.currentSickness.remove(s);
+    }
+
+    public String getCurrentImage() {
+        return currentImage;
+    }
+
+    public void setCurrentImage(String currentImage) {
+        this.currentImage = currentImage;
+    }
+    public void addAbility(Ability ab){
+        this.currentAbilities.add(ab);
+    }
 }

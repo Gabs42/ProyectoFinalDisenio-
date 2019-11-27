@@ -14,8 +14,12 @@ import Characters.MainCharacter;
 public class PooStrategy implements IActionStrategy {
     @Override
     public boolean action(MainCharacter character) {
-        if(character.getFood()!= 0){
+        if(character.getFood()> 0){
+            character.setCurrentImage("gokuBath.png");
            character.setFood(character.getFood()-1); 
+           if(character.getFood()<0){
+               character.setFood(0);
+           }
            return true;
         }
         return false;

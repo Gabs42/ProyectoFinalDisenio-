@@ -15,8 +15,12 @@ public class PeeStrategy implements IActionStrategy {
 
     @Override
     public boolean action(MainCharacter character) {
-        if(character.getLiquid() != 0){
-           character.setLiquid(character.getLiquid()-1); 
+        if(character.getLiquid()> 0){
+            character.setCurrentImage("gokuBath.png");
+           character.setLiquid(character.getLiquid()-2); 
+           if(character.getLiquid()<0){
+               character.setLiquid(0);
+           }
            return true;
         }
         return false;

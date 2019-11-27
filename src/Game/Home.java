@@ -16,15 +16,15 @@ public class Home {
     private HashMap<String,Vector2> secciones = new HashMap(); 
     
     public Home(){
-        addSeccion("Cocina",0,0);
-        addSeccion("Cuarto",15,15);
+        addSeccion("Cocina",250,250);
+        addSeccion("Cuarto",0,0);
         addSeccion("Banio",500,500);
-        addSeccion("Comedor",50,50);
-        addSeccion("Huerto",100,100);
-        addSeccion("Bodega",200,200);
-        addSeccion("ZonaEjercicios",300,300);
+        addSeccion("Comedor",600,600);
+        addSeccion("Huerto",700,700);
+        addSeccion("Bodega",375,375);
+        addSeccion("ZonaEjercicios",800,800);
         addSeccion("ZonaPelea",400,400);
-        addSeccion("Jardin",30,30);
+        addSeccion("Jardin",900,900);
     }
 
     public HashMap<String, Vector2> getSecciones() {
